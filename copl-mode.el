@@ -30,6 +30,7 @@
   '("and"
     "by"
     "changes"
+    "def"
     "do"
     "doesn't"
     "else"
@@ -277,7 +278,8 @@
 (defvar copl-font-lock-keywords
   `((,(regexp-opt copl--keyword-list 'symbols) 1 font-lock-keyword-face)
     (,(regexp-opt copl--constant-list 'symbols) 1 font-lock-constant-face)
-    (,(regexp-opt copl--rule-name-list 'symbols) 1 font-lock-builtin-face)))
+    (,(regexp-opt copl--rule-name-list 'symbols) 1 font-lock-builtin-face)
+    ("\\_<\\(\\$[[:alpha:]]+[[:digit:]]*\\)\\_>" 1 font-lock-variable-name-face)))
 
 (define-derived-mode copl-mode prog-mode "CoPL"
   "Major mode for CoPL."
